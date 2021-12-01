@@ -40,9 +40,8 @@ $stmt->close();
 	<body class="loggedin">
 		<nav class="navtop">
 			<div>
-				<h1>Website Title</h1>
-				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
-				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <a href='/home.php'><h1>Project Php</h1></a>
+				<a href="/auth/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
 		</nav>
 		<div class="content">
@@ -64,6 +63,10 @@ $stmt->close();
                         <td><input name='email' type='mail' value="<?php echo $row['email']; ?>"/></td>
 					</tr>
                     <tr>
+						<td><label>Admin (1=true, 0=false):</label></td>
+                        <td><input name='admin' type='number' max='1' min='0' value="<?php echo $row['admin'] ?>"/></td>
+					</tr>
+                    <tr>
                         <td><input type='submit' name="submit"/></td>
 					</tr>
 				</table>
@@ -77,8 +80,9 @@ $stmt->close();
         $username = $_POST['username'];
         $password = $_POST['password'];
         $email = $_POST['email'];
+        $admin = $_POST['admin'];
       $query = "UPDATE accounts SET username = '$username',
-                      password = '$password', email = '$email'
+                      password = '$password', email = '$email', admin = '$admin'
                       WHERE $id";
                     $result = mysqli_query($con, $query) or die(mysqli_error($con));
                     ?>

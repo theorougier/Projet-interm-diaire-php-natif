@@ -1,9 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.html');
-	exit;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +15,13 @@ if (!isset($_SESSION['loggedin'])) {
 	<body class="loggedin">
 		<nav class="navtop">
 			<div>
-				<h1>Website Title</h1>
+				<a href='/home.php'><h1>Project Php</h1></a>
+                <?php
+                if (isset($_SESSION['loggedin'])) {
+                    ?>
 				<a href="/auth/profile.php"><i class="fas fa-user-circle"></i>Profile</a>
-				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				<a href="/auth/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <?php } ?>
 			</div>
 		</nav>
 		<div class="content">
