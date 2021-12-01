@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +20,8 @@ session_start();
                     ?>
 				<a href="/auth/profile.php"><i class="fas fa-user-circle"></i>Profile</a>
 				<a href="/auth/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <?php }else{ ?>
+				<a href="/index.php"><i class="fas fa-user-circle"></i>Login</a>
                 <?php } ?>
 			</div>
 		</nav>

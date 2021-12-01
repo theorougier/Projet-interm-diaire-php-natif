@@ -63,7 +63,7 @@ $stmt->close();
                         <tr>
                         <td><?php echo $user.username; ?></td>
                         <td><?php echo $user.email; ?></td>
-                        <td><?php echo $row['admin'] ?></td>
+                        <td><?php echo $user.email; ?></td>
 					    </tr>
                         <?php } ?>
                     </tbody>

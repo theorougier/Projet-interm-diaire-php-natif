@@ -29,10 +29,10 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $_SESSION['id'] = $id;
             header('Location: /home.php');
         } else {
-            echo 'Incorrect username and/or password!';
+            header('Location: /index.php');
         }
     } else {
-        echo 'Incorrect username and/or password!';
+        header('Location: /index.php');
     }
 
 
