@@ -1,0 +1,3 @@
+DirectoryIndex src/index.php
+
+Include src/auth/authenticate.php
